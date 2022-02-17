@@ -1,0 +1,34 @@
+<div class="container p-4">
+    <div class="col-md-12">
+        <div class="employees">
+            <div class="item" *ngFor="let item of users">
+                <div class="avatar">
+                    <img src="assets/images/avatar.svg" width="50">
+                </div>
+                <div class="name">
+                    <span class="label">Name :</span> {{item.name}}
+                </div>
+                <div class="designation">
+                    <span class="label">Designation :</span> {{item.designation}}
+                </div>
+                <div class="designation">
+                    <span class="label">Department :</span> {{item.dept}}
+                </div>
+                <div class="status">
+                    <span class="label">Status : </span>
+                    <span *ngIf="item.status === 'Active'" class="text-success font-weight-bold"> 
+                        {{item.status}}
+                    </span>
+                    <span *ngIf="item.status === 'Inactive'" class="text-danger font-weight-bold"> 
+                        {{item.status}}
+                    </span>
+                </div>
+                <div class="details">
+
+                    <a [routerLink]="['/employee', item.id]" class="btn btn-outline-success btn-sm">View Employee</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
